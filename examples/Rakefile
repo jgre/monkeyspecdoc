@@ -1,0 +1,7 @@
+task :default => [:test]
+
+task :test do
+  require 'rake/runtest'
+  require '../specdoc'
+  Rake.run_tests 'helloworld_test.rb'
+end
