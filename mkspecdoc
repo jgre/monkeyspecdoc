@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+$:.push File.dirname(__FILE__)
+require 'specdoc'
+
+require ARGV[0]
