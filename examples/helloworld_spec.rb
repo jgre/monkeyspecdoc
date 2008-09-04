@@ -14,7 +14,7 @@ describe HelloWorld do
   it 'should say "Hello, World!"' do
     sio = StringIO.new
     @hello.say_hello(sio)
-    sio.string.should == 'Hello, World'
+    sio.string.should == 'Hello, World!'
   end
 
 end

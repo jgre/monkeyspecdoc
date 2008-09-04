@@ -17,7 +17,7 @@ class TestHelloWorld < Test::Unit::TestCase
     should 'say "Hello, World!"' do
       sio = StringIO.new
       @hello.say_hello(sio)
-      assert_equal 'Hello, World', sio.string
+      assert_equal 'Hello, World!', sio.string
     end
 
   end
