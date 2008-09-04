@@ -3,4 +3,6 @@
 $:.push File.dirname(__FILE__)
 require 'specdoc'
 
-require ARGV[0]
+ARGV.each do |file|
+  require file
+end
