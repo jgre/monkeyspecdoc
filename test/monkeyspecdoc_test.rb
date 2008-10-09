@@ -1,4 +1,4 @@
-$: << File.join(File.dirname(__FILE__), '..')
+$: << File.join(File.dirname(__FILE__), '..', 'lib')
 $: << File.dirname(__FILE__)
 
 require 'test/unit'
