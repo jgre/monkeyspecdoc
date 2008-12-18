@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{MonkeySpecDoc}
-  s.version = "0.9.0"
+  s.version = "0.9.1"
 
   s.authors = ["Janico Greifenberg"]
   s.date = %q{2008-10-09}
