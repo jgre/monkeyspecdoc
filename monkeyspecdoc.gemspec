@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email = %q{jgre@jgre.org}
   s.executables = ["mkspecdoc"]
   s.require_paths = ["lib"]
-  s.files = %w{bin/mkspecdoc monkeyspecdoc.gemspec lib/specdoc.rb examples/helloworld.rb examples/helloworld_spec.rb examples/helloworld_test.rb examples/Rakefile test/error_test.rb test/failure_test.rb test/monkeyspecdoc_test.rb test/success_test.rb}
+  s.files = %w{bin/mkspecdoc monkeyspecdoc.gemspec lib/monkeyspecdoc.rb examples/helloworld.rb examples/helloworld_spec.rb examples/helloworld_test.rb examples/Rakefile test/error_test.rb test/failure_test.rb test/monkeyspecdoc_test.rb test/success_test.rb}
   s.has_rdoc = false
   s.homepage = %q{http://jgre.org/2008/09/03/monkeyspecdoc/}
   s.summary = %q{Specdoc output for Ruby's Test::Unit and Shoulda}

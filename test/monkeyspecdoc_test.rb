@@ -6,7 +6,7 @@ require 'test/unit/ui/console/testrunner'
 
 require 'rubygems'
 require 'shoulda'
-require 'specdoc'
+require 'monkeyspecdoc'
 require 'stringio'
 
 
