@@ -2,7 +2,7 @@
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
 $:.push File.dirname(__FILE__)
-require 'specdoc'
+require 'monkeyspecdoc'
 
 ARGV.each do |file|
   require file
