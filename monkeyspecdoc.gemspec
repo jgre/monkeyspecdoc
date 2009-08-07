@@ -15,3 +15,4 @@ Gem::Specification.new do |s|
   s.summary = %q{Specdoc output for Ruby's Test::Unit and Shoulda}
   s.test_files = ["test/monkeyspecdoc_test.rb"]
 end
+
