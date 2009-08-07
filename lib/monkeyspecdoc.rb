@@ -46,7 +46,8 @@ module Test
                 output("#{ctx}:")
               end
               @ctx = ctx
-              output_single("- #{should}: ")
+              @current_test_text = " ==> #{should}"
+              #output_single("- #{should}: ")
             else
               test_started_old(name)
             end
@@ -58,11 +59,16 @@ module Test
           end
 
           def test_finished(name)
+            # can cause issues if there's no test text.
+            @current_test_text = ' ' if @current_test_text.blank? || @current_test_text.nil?
             if fault = @faults.find {|f| f.test_name == name}
-              fault_type = fault.is_a?(Test::Unit::Failure) ? "FAILED" : "ERROR"
-              output("\e[0;31m#{fault_type}\e[0m (#{@faults.length})")
+              # Added ! to ERROR for length consistency
+              fault_type = fault.is_a?(Test::Unit::Failure) ? "FAILED" : "ERROR!"
+              # NOTE -- Concatenation because "\e[0m]" does funky stuff.
+              output("[\e[0;31m#{fault_type}\e[0m" + "]#{@current_test_text} (#{@faults.length})")
             else
-              output("\e[0;32mOK\e[0m")
+              # Added spaces on either side of OK for length consistency
+              output("[  \e[0;32mOK\e[0m  ]#{@current_test_text}")
             end
             @already_outputted = false
           end
