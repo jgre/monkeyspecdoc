@@ -60,7 +60,7 @@ module Test
 
           def test_finished(name)
             # can cause issues if there's no test text.
-            @current_test_text = ' ' if @current_test_text.blank? || @current_test_text.nil?
+            @current_test_text = ' ' if @current_test_text.empty? || @current_test_text.nil?
             if fault = @faults.find {|f| f.test_name == name}
               # Added ! to ERROR for length consistency
               fault_type = fault.is_a?(Test::Unit::Failure) ? "FAILED" : "ERROR!"

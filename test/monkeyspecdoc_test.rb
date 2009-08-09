@@ -20,14 +20,14 @@ class TestMonkeySpecDoc < Test::Unit::TestCase
     require 'success_test'
     Test::Unit::UI::Console::TestRunner.new(TestSuccess, 2, @sio).start
     assert_match /^Success:$/, @sio.string
-    assert_match /^- should be ok: .*OK/, @sio.string
+    assert_match /^\[  .*OK.*  \] ==> should be ok/, @sio.string
   end
 
   should 'print failure messages' do
     require 'failure_test'
     Test::Unit::UI::Console::TestRunner.new(TestFailure, 2, @sio).start
     assert_match /^Failure:$/, @sio.string
-    assert_match /^- should be ok: .*FAILED.*(1)/, @sio.string
+    assert_match /^\[.*FAILED.*\] ==> should be ok \(\d\)/, @sio.string
     assert_match /1\) Failure should be ok FAILED:/, @sio.string
     assert_match /Flunked./, @sio.string
   end
@@ -36,10 +36,9 @@ class TestMonkeySpecDoc < Test::Unit::TestCase
     require 'error_test'
     Test::Unit::UI::Console::TestRunner.new(TestError, 2, @sio).start
     assert_match /^Error:$/, @sio.string
-    assert_match /^- should be ok: .*ERROR.*(1)/, @sio.string
+    assert_match /^\[.*ERROR\!.*\] ==> should be ok \(\d\)/, @sio.string
     assert_match /1\) NameError in Error should be ok:/, @sio.string
     assert_match /NameError: undefined local variable or method .bla. for/,
       @sio.string
   end
-
 end
